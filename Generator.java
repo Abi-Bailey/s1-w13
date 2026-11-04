@@ -13,25 +13,31 @@ public class Generator {
    
    public int generator1( ) {
       // You supply this code.
-      return 0;
+      return randGen.nextInt(6) + 1;
    }
     
    
    public int generator2( ) {
       // You supply this code.
-      return 0;
+      return randGen.nextInt(6) + randGen.nextInt(6) + 2;
    }
    
    
    public int generator3( ) {
       // You supply this code.
-      return 0;
+      return randGen.nextInt(12) + 1;
    }
    
    
-   public int generator4( ) {
+   public int generator4(int forbidden) {
       // You supply this code.
-      return 0;
+      int x = randGen.nextInt(6) + 1;
+      if(x == forbidden){
+         x = -1;
+      }
+      // while(x == forbidden)
+      //    x = randGen.nextInt();
+      return x; 
    }
    
    
@@ -47,7 +53,7 @@ public class Generator {
          } else if (whichTest == 3) {
             bars.add(generator3( ));
          } else if (whichTest == 4) {
-            bars.add(generator4( ));
+            bars.add(generator4(3));
          } else {
             System.out.println("I don't have such a test!");
             break;
@@ -57,5 +63,12 @@ public class Generator {
       bars.updateUI();     // tells the bar chart to update its picture
    }
 
+   public static void main(String[] args) {
+      Generator g = new Generator();
+      // g.tester(1, 10000);
+      // g.tester(2, 10000);
+      // g.tester(3, 10000);
+      g.tester(4, 10000);
+   }
    
 }
