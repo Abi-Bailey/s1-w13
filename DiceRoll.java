@@ -2,8 +2,8 @@ import java.util.Random;
 
 public class DiceRoll
 {
-    private int roll1;
-    private int roll2;
+    private int die1;
+    private int die2;
     private Random randGen;
     
     public DiceRoll ( ) {
@@ -11,11 +11,11 @@ public class DiceRoll
     }
     
     public void roll ( ) {
-        roll1 = 1 + randGen.nextInt (6);
-        roll2 = 1 + randGen.nextInt (6);
+        die1 = 1 + randGen.nextInt (6);
+        die2 = 1 + randGen.nextInt (6);
     }
     
     public int total ( ) {
-        return roll1 + roll2;
+        return die1 + die2;
     }
 }
